@@ -1,0 +1,13 @@
+void Hanoi_move(int n,char A,char B,char C){
+	// A上的n个圆盘移动到C上
+	// B为辅助放置位置
+	// 解：n=1:A->C
+	// n>1: n-1个 A->B
+	if(n==1){ // 递归结束的标志 
+		cout<<A<<" -> "<<C<<endl;
+	}else{
+		Hanoi_move(n-1,A,C,B);    // 将n-1个圆盘放置到辅助B位置
+		cout<<A<<" -> "<<C<<endl; // 移动第n个到C位置
+		Hanoi_move(n-1,B,A,C);    // 将n-1个圆盘放置到C位置
+	}
+}
